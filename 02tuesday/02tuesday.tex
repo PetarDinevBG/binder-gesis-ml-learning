@@ -656,6 +656,27 @@ UvA LOC
 \end{frame}
 
 
+\begin{frame}[fragile]{Example: Lemmatization instead of stemming}
+
+In contrast to stemming, lemmatization actually gives you the words in the form in which you would look them up in a good old dictionary.
+
+\begin{lstlisting}
+import spacy
+nlp = spacy.load('en')
+doc = nlp("I am running while generously greeting my neighbors")
+lemmatized = " ".join([word.lemma_ for word in doc])
+print(lemmatized)
+\end{lstlisting}
+
+returns:
+
+\begin{lstlisting}
+-PRON- be run while generously greet -PRON- neighbor
+\end{lstlisting}  
+
+\end{frame}
+
+
 
 \begin{frame}{More NLP}
 \Huge{Look at \url{http://nlp.stanford.edu}}
