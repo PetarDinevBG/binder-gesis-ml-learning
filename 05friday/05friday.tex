@@ -367,17 +367,96 @@ https://scikit-learn.org/stable/auto\_examples/hetero\_feature\_union.html}
 
 \end{frame}
 
+
+\section{Advanced ML}
+
+
+\begin{frame}[plain]
+\vspace{2cm}
+\textbf{Advanced Machine Learning techniques} \\
+Embeddings and Keras
+\vspace{2cm}
+\end{frame}
+
+
+\subsection{Embedding-based vectorizer}
+
+\begin{frame}{Embedding based vectorizer}
+
+\begin{block}{General idea}
+	\begin{itemize}[<+->]
+		\item language models that capture the meaning of words
+		\item Similar words occupy similar positions
+		\item Embedding models represent words in a high dimensional space 
+	\end{itemize}
+\end{block}
+
+\pause
+\begin{exampleblock}{Value for ML}
+	\begin{itemize}
+		\item Embedding models can help understand words in the application text even if they do \textcolor{red}{NOT} appear in the training data set
+	\end{itemize}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[plain]
+\textbf{Vectorizing data using embedding models}
+\end{frame}
+
+\begin{frame}{Embedding vectorizers}
+\begin{block}{Embedding-based vectorizers}
+	\begin{itemize}[<+->]
+		\item For each word in a document, the associated word vectors in the embedding model are retrieved. 
+		\item These features can weighted: 
+		\begin{enumerate}
+			\item average word frequency: \textcolor{red}{count}
+			\item \textcolor{red}{tfidf} weighting
+	\end{enumerate}
+	\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Vectorize data using embedding model}
+\begin{lstlisting}
+import embeddingvectorizer
+import gensim
+
+model = gensim.models.Word2Vec.load(`path_to_w2v_model')  
+embedding_mdl = dict(zip(model.wv.index2word, model.wv.syn0)) 
+embedding_vect = embeddingvectorizer.EmbeddingCountVectorizer(embedding_mdl, `mean') 
+
+\end{lstlisting}
+
+{\footnotesize 
+	\begin{description}
+		\item[\textcolor{red}{embeddingvectorizer}] pip install embeddingvectorizer: \url{github.com/ccs-amsterdam/embeddingvectorizer} 
+	\end{description}
+}
+
+\end{frame}
+
+\begin{frame}[fragile]{Next step: Fit the model}
+\begin{lstlisting}
+
+from sklearn.linear_model import LogisticRegressionCV
+from sklearn.pipeline import make_pipeline
+
+clf = LogisticRegressionCV()
+pipe = make_pipeline(embedding_vect, clf)
+pipe.fit(X_train, y_train)
+pipe.score(X_test, y_test)
+\end{lstlisting}
+
+\end{frame}
+
 \begin{frame}[plain]
 \huge
 
 TODO
-
 meer visualization
-
-
 keras
 
-word embeddings
 
 \end{frame}
 
