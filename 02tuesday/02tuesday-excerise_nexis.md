@@ -35,7 +35,6 @@ Afterwards, we can start converting our files:
 
 ```
 from striprtf.striprtf import rtf_to_text
-from striprtf.striprtf import rtf_to_text
 
 rtf_string = open("02tuesday/corona_news/news_corona_1.RTF").read()
 text = rtf_to_text(rtf_string)
