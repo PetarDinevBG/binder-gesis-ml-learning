@@ -46,8 +46,5 @@ for filename in infowarsfiles:
 ```
 
 
-# Alternative exercise regular expression
-
-If you are more interested in using regular expressions to parse semi-structured documents (such as in the LexisNexis-example), you can have a look at this alternative exercise and data:
 
 https://github.com/annekroon/gesis-ml-learning/blob/master/02tuesday/02tuesday-excerise_nexis.md#exercise-parsing-unstructured-text-files
