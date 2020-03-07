@@ -5,10 +5,6 @@ Anne Kroon and Damian Trilling
 
 # Advanced ML: Working with an embedding vectorizer
 
-
-# Advanced ML: Working with an embedding vectorizer
-
-
 #### 1. install embedding vectorizer:
 pip install embeddingvectorizer
 
@@ -142,8 +138,10 @@ missingwords, embedding_vectors = get_weight_matrix(embeddings_index, tokenizer.
 len(embedding_vectors), len(Xtrain)
 
 embedding_layer = Embedding(len(tokenizer.word_index)+1, 300, weights=[embedding_vectors], input_length=max_length, trainable=False)
+```
 
-# define model
+define the model
+```
 model = Sequential()
 model.add(embedding_layer)
 model.add(Conv1D(filters=128, kernel_size=5, activation='relu'))
@@ -152,9 +150,10 @@ model.add(Flatten())
 model.add(Dense(4, activation='sigmoid'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 print(model.summary())
+```
 
-# alternatief model
-
+alternatief model
+```
 numberoflabels = 4
 model = Sequential()
 model.add(embedding_layer)
@@ -164,12 +163,19 @@ model.add(MaxPooling1D(4))
 model.add(Flatten())
 model.add(Dense(units=64, activation='relu'))
 model.add(Dense(units=numberoflabels, activation='softmax'))   # voor twee categorien sigmoid, voor 1 tanh
+```
 
+compile
+
+```
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 print(model.summary())
+```
 
+fit
+
+```
 VALIDATION_SIZE=200
-
 model.fit(Xtrain[:-VALIDATION_SIZE], y_train[:-VALIDATION_SIZE],
           epochs=3, verbose=True,
           validation_data=(Xtrain[-VALIDATION_SIZE:], y_train[-VALIDATION_SIZE:]))
@@ -177,11 +183,7 @@ model.fit(Xtrain[:-VALIDATION_SIZE], y_train[:-VALIDATION_SIZE],
 loss, acc = model.evaluate(Xtest, y_test, verbose=True)
 print('Test Accuracy: %f' % (acc*100))
 
-# compile network
-# fit network
-model.fit(Xtrain, y_train, epochs=3, verbose=True)
-# evaluate
-loss, acc = model.evaluate(Xtest, y_test, verbose=0)
-print('Test Accuracy: %f' % (acc*100))
+```
+
 
 ```
