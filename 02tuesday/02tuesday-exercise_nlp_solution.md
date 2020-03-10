@@ -3,7 +3,7 @@ Anne Kroon and Damian Trilling
 
 # A possible solution to the assignment
 
-```
+```python3
 from glob import glob
 import random
 import nltk
@@ -26,13 +26,13 @@ articles =random.sample(infowarsarticles, 10)
 
 ### lowercasing articles
 
-```
+```python3
 articles_lower_cased = [art.lower() for art in articles]
 ```
 
 ### removing stopwords
 
-```
+```python3
 mystopwords = nltk.corpus.stopwords.words("english")
 
 
@@ -47,13 +47,14 @@ for article in articles:
 
 
 Same solution, but with list comprehension:
-```
+
+```python3
 articles_without_stopwords = [" ".join([w for w in article.lower().split() if w not in mystopwords]) for article in articles]
 ```
 
 ### Stemming
 
-```
+```python3
 stemmer = SnowballStemmer("english")
 
 stemmed_text = []
@@ -65,14 +66,15 @@ for article in articles:
 ```
 
 Same solution, but with list comprehension:
-```
+
+```python3
 stemmed_text  = [" ".join([stemmer.stem(w) for w in article.lower().split()]) for article in articles]
 ```
 
 
 # Task 2: Extract information
 
-```
+```Python3
 import nltk
 
 tokens = [nltk.word_tokenize(sentence) for sentence in articles]
@@ -81,7 +83,8 @@ print(tagged[0])
 ```
 
 playing around with Spacy:
-```
+
+```python3
 nlp = spacy.load('en')
 
 doc = [nlp(sentence) for sentence in articles]
