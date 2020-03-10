@@ -19,7 +19,6 @@ Try to extract meaningful information from your texts. Depending on your interes
 
 ## Dataset
 
-
 You are **very much** encouraged to use your own data for this. Alternatively, you could use the following (huge!) dataset of this year's ICWSM Dataset challenge (see http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=99774&copyownerid=99078)
 
 You can get it like this (on Linux):
@@ -44,7 +43,3 @@ for filename in infowarsfiles:
     with open(filename) as f:
 	    infowarsarticles.append(f.read())
 ```
-
-
-
-https://github.com/annekroon/gesis-ml-learning/blob/master/02tuesday/02tuesday-excerise_nexis.md#exercise-parsing-unstructured-text-files
