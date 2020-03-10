@@ -1,6 +1,9 @@
 # A Practical Introduction to Machine Learning in Python
 Anne Kroon and Damian Trilling
 
+Anne Kroon and Damian Trilling
+
+
 ## Task 1: Preprocessing data
 
 Take a dataset of your choice. Use the techniques we covered this week (look it up on the slides or in the book) to preprocess it. Techniques you can try out include:
@@ -19,23 +22,24 @@ Try to extract meaningful information from your texts. Depending on your interes
 
 ## Dataset
 
+
 You are **very much** encouraged to use your own data for this. Alternatively, you could use the following (huge!) dataset of this year's ICWSM Dataset challenge (see http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=99774&copyownerid=99078)
 
 You can get it like this (on Linux):
 
-```
+```linux
 cd DIRECTORY-WHERE-YOU-WANT-YOUR-DATA
-wget https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/ULHLCB/MWLJVN -o mydata.tar.gz
+wget "https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/ULHLCB/MWLJVN" -o mydata.tar.gz
 tar -xzf mydata.tar.gz
 ```
 A subfolder called `articles` will be created. Once all looks good, don't forget to delete the archive again:
-```
+```linux
 rm mydata.tar.gz
 ```
 
 Within Python, you can then use `glob` to get a list of all the files you care about (explore the structure of the directory before!):
 
-```
+```python3
 from glob import glob
 infowarsfiles = glob('articles/*/Infowars/*')
 infowarsarticles = []
