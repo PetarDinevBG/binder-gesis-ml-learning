@@ -1,7 +1,7 @@
 # Clustering Exercise
 
 Go to 
-https://figshare.com/articles/News-Processed-Dataset/5296357} and download `WSJ_20170607_to_20170726_10AmTo4Pm.json` (the small file of 9 MB)
+https://figshare.com/articles/News-Processed-Dataset/5296357 and download `WSJ_20170607_to_20170726_10AmTo4Pm.json` (the small file of 9 MB)
 
 You can read a one-json-object-per-line (jsonlines) file as follows:
 
