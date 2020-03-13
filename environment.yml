@@ -7,6 +7,8 @@ dependencies:
   - numpy=1.16.4
   - pandas
   - nltk
+  - re
+  - striprtf
   - gensim 
   - seaborn
   - pip
