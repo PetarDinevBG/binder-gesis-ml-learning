@@ -1,0 +1,16 @@
+name: GesisLearning-environment
+channels:
+  - conda-forge
+  - anaconda
+dependencies:
+  - python=3.7.3
+  - numpy=1.16.4
+  - sklearn
+  - pandas
+  - nltk
+  - striprtf.striprtf 
+  - re
+  - glob
+  - gensim 
+  - seaborn
+  - pip
