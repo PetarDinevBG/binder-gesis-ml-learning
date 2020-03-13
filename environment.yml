@@ -7,6 +7,6 @@ dependencies:
   - numpy
   - pandas
   - nltk
-  - sklearn
+  - scikit-learn
   - gensim 
   - seaborn
