@@ -7,8 +7,6 @@ dependencies:
   - numpy
   - pandas
   - nltk
-  - re
-  - striprtf
+  - sklearn
   - gensim 
   - seaborn
-  - pip
