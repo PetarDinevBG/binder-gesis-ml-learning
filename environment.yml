@@ -13,7 +13,8 @@ dependencies:
   - tqdm
   - pyLDAvis
   - seaborn
-  - embeddingvectorizer
+  - tensorflow
   - pip:
     - striprtf
+    - embeddingvectorizer
 
