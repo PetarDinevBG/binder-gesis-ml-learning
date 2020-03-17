@@ -9,7 +9,7 @@ dependencies:
   - scikit-learn
   - nltk
   - gensim
-  - striprtf
+  - striprtf.striprtf
   - matplotlib
   - tqdm
   - pyLDAvis
