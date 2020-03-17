@@ -13,5 +13,7 @@ dependencies:
   - tqdm
   - pyLDAvis
   - seaborn
+  - embeddingvectorizer
   - pip:
     - striprtf
+
