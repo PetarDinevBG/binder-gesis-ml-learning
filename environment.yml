@@ -1,4 +1,4 @@
-name: GesisLearning-environment
+name: ml-learning
 channels:
   - conda-forge
   - anaconda
