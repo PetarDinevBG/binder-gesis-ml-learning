@@ -1,4 +1,4 @@
-name: ml-learning
+name: mllearning-environment
 channels:
   - conda-forge
   - anaconda
