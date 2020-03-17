@@ -7,4 +7,10 @@ dependencies:
   - numpy
   - pandas
   - scikit-learn
-
+  - nltk
+  - gensim
+  - striprtf
+  - matplotlib
+  - tqdm
+  - pyLDAvis
+  - seaborn
